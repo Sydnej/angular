@@ -1,0 +1,36 @@
+<p>
+  card-creator works!
+</p>
+
+<input [(ngModel)] = "text">
+<input type="button" value="Click" (click) = "clickMe()"/>
+
+<p>{{text}}</p>
+<p>{{text2}}</p>
+<select [(ngModel)] ="selectCategory" >
+  <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+</select>
+<div>
+    Wybrana kategoria: {{selectCategory.name}}   
+</div>
+
+<h1>Dostępne kategorie:</h1>
+<ul *ngFor="let category of categories"
+    [ngSwitch]="category.cat">
+
+  <li *ngSwitchCase="'A'"
+      class="cat-a">
+    {{ category.name }}
+  </li>
+  <li *ngSwitchCase="'A1'"
+      class="cat-a1">
+      {{ category.name }}
+  </li>
+  <li *ngSwitchCase="'A2'"
+      class="cat-a2">
+      {{ category.name }}
+  </li>
+  <li *ngSwitchDefault>
+      {{ category.name }}
+  </li>
+</ul>`
